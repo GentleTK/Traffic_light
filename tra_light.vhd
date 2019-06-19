@@ -211,5 +211,4 @@ begin
 		when others =>du<="00000000";
 	end case;
 end process;
-
 end beh;	
