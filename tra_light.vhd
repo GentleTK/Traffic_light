@@ -36,7 +36,6 @@ process(clk)
 	end if;
 end process;
 
-
 process(clk)
 begin
 	if clk'event and clk='1' then
@@ -52,7 +51,6 @@ begin
 		end if;
 	end if;
 end process;
-
 
 state_reg:process(clk1,rst)
 begin
@@ -81,12 +79,12 @@ begin
 		end if;
 		
 		when s2 => r2<=1;r4<=1;g2<=0;g4<=0;
-				r1<=1;g1<=1;r3<=1;g3<=1;
-		init1<=12;t1<=cnt;t2<=cnt;lock<='1';
+			r1<=1;g1<=1;r3<=1;g3<=1;
+			init1<=12;t1<=cnt;t2<=cnt;lock<='1';
 		if cnt>11 then r2<=1;r4<=1;g2<=0;g4<=0;
-				r1<=m1;g1<=m1;r3<=m1;g3<=m1;
+			r1<=m1;g1<=m1;r3<=m1;g3<=m1;
 		elsif cnt>10 then r2<=1;r4<=1;g2<=0;g4<=0;
-				r1<=m1;g1<=m1;r3<=m1;g3<=m1;
+			r1<=m1;g1<=m1;r3<=m1;g3<=m1;
 		elsif cnt>9 then r2<=1;r4<=1;g2<=0;g4<=0;
 			r1<=m1;g1<=m1;r3<=m1;g3<=m1;
 		elsif cnt>8 then r2<=1;r4<=1;g2<=0;g4<=0;
@@ -114,17 +112,17 @@ begin
 		end if;
 		
 		when s3 => g2<=1;g4<=1;r1<=1;r3<=1;
-		r2<=0;r4<=0;g1<=0;g3<=0;
-		init1<=5;t1<=cnt;t2<=cnt+5;lock<='1';init2<=0;
+			r2<=0;r4<=0;g1<=0;g3<=0;
+			init1<=5;t1<=cnt;t2<=cnt+5;lock<='1';init2<=0;
 		if cnt=0 then n_state<=s4;
 		else n_state<=s3;lock<='0';
 		end if;
-		
+			
 		when s4 => r1<=1;r3<=1;g1<=0;g3<=0;
-				r2<=1;g2<=1;r4<=1;g4<=1;
-		init1<=12;t1<=cnt;t2<=cnt;lock<='1';
+			r2<=1;g2<=1;r4<=1;g4<=1;
+			init1<=12;t1<=cnt;t2<=cnt;lock<='1';
 		if cnt>11 then r1<=1;r3<=1;g1<=0;g3<=0;
-				r2<=m1;g2<=m1;r4<=m1;g4<=m1;
+			r2<=m1;g2<=m1;r4<=m1;g4<=m1;
 		elsif cnt>10 then r1<=1;r3<=1;g1<=0;g3<=0;
 			r2<=m1;g2<=m1;r4<=m1;g4<=m1;
 		elsif cnt>9 then r1<=1;r3<=1;g1<=0;g3<=0;
@@ -152,9 +150,7 @@ begin
 		if cnt<12 and cnt>0 then n_state<=s4;lock<='0';
 		else n_state<=s1;
 		end if;
-		
 		when others => n_state<=s0;
-		
 	end case;
 end process;
 
@@ -202,7 +198,7 @@ end process;
 process(num)
 begin
 	case num is
-		when 0 => du<="11111100";
+		when 0 => du <="11111100";
 		when 1 => du <="01100000";
 		when 2 => du <="11011010";
 		when 3 => du <="11110010";
