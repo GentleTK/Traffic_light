@@ -1,2 +1,4 @@
 # Traffic_light
-Traffic light control circuit based on VHDL language
+
+#### 介绍
+基于VHDL的交通灯控制
